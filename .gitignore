@@ -1,0 +1,26 @@
+# Built binaries
+/custom-gcl
+/gosmell
+
+# Go build/test artifacts
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+coverage.txt
+coverage.html
+
+# Temporary config gosmell writes into the target project while running
+.gosmell-*.yml
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,11 @@
+version: "2"
+
+linters:
+  enable:
+    - gosmell
+  settings:
+    custom:
+      gosmell:
+        type: module
+        description: "detects Go code smells (CS101-CS112): long methods/classes, duplication, dead code, swallowed errors and more"
+        original-url: github.com/bartollo/gosmell

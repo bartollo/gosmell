@@ -1,0 +1,6 @@
+version: v2.13.2
+name: custom-gcl
+destination: .
+plugins:
+  - module: github.com/bartollo/gosmell
+    path: .
