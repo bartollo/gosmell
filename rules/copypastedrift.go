@@ -127,7 +127,7 @@ func shapeEditDistance(a, b []string) int {
 		dp[i] = make([]int, cols)
 		dp[i][0] = i
 	}
-	for j := 0; j < cols; j++ {
+	for j := range cols {
 		dp[0][j] = j
 	}
 	for i := 1; i < rows; i++ {
