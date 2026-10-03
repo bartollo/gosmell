@@ -265,7 +265,7 @@ func userSettingsBlock(dir string) (string, error) {
 
 	var block strings.Builder
 	block.WriteString("        settings:\n")
-	for _, line := range strings.Split(strings.TrimRight(string(data), "\n"), "\n") {
+	for line := range strings.SplitSeq(strings.TrimRight(string(data), "\n"), "\n") {
 		if line == "" {
 			block.WriteByte('\n')
 			continue
@@ -348,10 +348,7 @@ func countSeverities(fileFindings map[string][]displayFinding) (total, high, med
 }
 
 func computeScore(high, medium, low int) int {
-	penalty := high*5 + medium*3 + low
-	if penalty > 100 {
-		penalty = 100
-	}
+	penalty := min(high*5+medium*3+low, 100)
 	return 100 - penalty
 }
 

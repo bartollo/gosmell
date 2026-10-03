@@ -70,9 +70,6 @@ func ConfidenceFromExcess(ratios ...float64) int {
 		return 60
 	}
 	avg := total / float64(exceeded)
-	score := 60 + exceeded*8 + int(avg*6)
-	if score > 97 {
-		score = 97
-	}
+	score := min(60+exceeded*8+int(avg*6), 97)
 	return score
 }

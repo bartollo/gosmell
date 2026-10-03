@@ -3,6 +3,7 @@ package rules
 import (
 	"fmt"
 	"go/ast"
+	"slices"
 	"strings"
 
 	"golang.org/x/tools/go/analysis"
@@ -114,10 +115,8 @@ func isNotImplementedBody(body *ast.BlockStmt) bool {
 	case *ast.ExprStmt:
 		return isPanicNotImplemented(stmt.X)
 	case *ast.ReturnStmt:
-		for _, r := range stmt.Results {
-			if isErrorConstructorNotImplemented(r) {
-				return true
-			}
+		if slices.ContainsFunc(stmt.Results, isErrorConstructorNotImplemented) {
+			return true
 		}
 	}
 	return false
