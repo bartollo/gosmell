@@ -224,7 +224,6 @@ func runGolangciLint(bin, dir, pattern string) (*golangciJSON, error) {
 		if _, ok := err.(*exec.ExitError); !ok {
 			return nil, fmt.Errorf("running %s: %w", bin, err)
 		}
-
 	}
 
 	var result golangciJSON
