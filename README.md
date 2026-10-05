@@ -1,5 +1,7 @@
 # gosmell
 
+[![build](https://github.com/bartollo/gosmell/actions/workflows/go.yml/badge.svg)](https://github.com/bartollo/gosmell/actions/workflows/go.yml)
+
 A golangci-lint plugin (`gosmell`) that detects Go code smells (CS101–CS112:
 long methods/classes, duplication, dead code, swallowed errors and more), plus a
 standalone CLI that runs it through golangci-lint and prints a pretty, scored report.
